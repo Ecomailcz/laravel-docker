@@ -11,4 +11,4 @@ RUN apt-get update && apt-get install -y \
 
 COPY bin/* /usr/local/bin/
 
-CMD /usr/local/bin/start-laravel;
+CMD /usr/local/bin/app-start;
