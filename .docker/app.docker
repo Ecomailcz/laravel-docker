@@ -3,6 +3,7 @@ FROM php:7.2.7-fpm
 # php-fpm default WORKDIR is /var/www/html
 # change it to /var/www
 RUN usermod -u 1000 www-data
+RUN chown -R www-data:www-data /var/
 RUN chown -R www-data:www-data /var/www
 WORKDIR /var/www
 
@@ -10,3 +11,5 @@ RUN apt-get update && apt-get install -y \
     libmcrypt-dev \
     mysql-client --no-install-recommends \
     && docker-php-ext-install pdo_mysql pcntl
+
+# RUN /etc/my_init.d/boot.sh
