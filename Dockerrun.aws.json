@@ -4,7 +4,7 @@
     {
       "essential": true,
       "image": "525060288769.dkr.ecr.eu-west-1.amazonaws.com/ecomailcz/app:latest",
-      "memory": 256,
+      "memory": 128,
       "mountPoints": [
         {
           "containerPath": "/var/www",
@@ -23,7 +23,7 @@
       "links": [
         "app"
       ],
-      "memory": 512,
+      "memory": 128,
       "mountPoints": [
         {
           "containerPath": "/var/www",
