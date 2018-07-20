@@ -1,4 +1,4 @@
-FROM php:7.1.10-fpm
+FROM php:7.2.7-fpm
 
 # php-fpm default WORKDIR is /var/www/html
 # change it to /var/www
@@ -7,4 +7,4 @@ WORKDIR /var/www
 RUN apt-get update && apt-get install -y \
     libmcrypt-dev \
     mysql-client --no-install-recommends \
-    && docker-php-ext-install mcrypt pdo_mysql pcntl
+    && docker-php-ext-install pdo_mysql pcntl
