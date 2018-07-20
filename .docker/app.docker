@@ -8,7 +8,3 @@ RUN apt-get update && apt-get install -y \
     libmcrypt-dev \
     mysql-client --no-install-recommends \
     && docker-php-ext-install pdo_mysql pcntl
-
-COPY bin/* /usr/local/bin/
-
-CMD /usr/local/bin/app-start;
