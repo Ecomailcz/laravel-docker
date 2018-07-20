@@ -9,4 +9,6 @@ RUN apt-get update && apt-get install -y \
     mysql-client --no-install-recommends \
     && docker-php-ext-install pdo_mysql pcntl
 
-RUN chown -R www-data:www-data /var/www
+COPY bin/* /usr/local/bin/
+
+CMD /usr/local/bin/start-laravel;
