@@ -12,7 +12,7 @@
         },
         {
           "containerPath": "/usr/local/var/log",
-          "sourceVolume": "awseb-logs-php-fpm"
+          "sourceVolume": "awseb-logs-app"
         }
       ],
       "name": "app"
@@ -31,7 +31,7 @@
         },
         {
           "containerPath": "/var/log/nginx",
-          "sourceVolume": "awseb-logs-nginx"
+          "sourceVolume": "awseb-logs-web"
         }
       ],
       "name": "web",
