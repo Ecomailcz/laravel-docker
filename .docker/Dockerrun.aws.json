@@ -1,0 +1,54 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "essential": true,
+      "image": "525060288769.dkr.ecr.eu-west-1.amazonaws.com/ecomailcz/app:latest",
+      "memory": 256,
+      "mountPoints": [
+        {
+          "containerPath": "/var/www",
+          "sourceVolume": "application"
+        },
+        {
+          "containerPath": "/usr/local/var/log",
+          "sourceVolume": "awseb-logs-php-fpm"
+        }
+      ],
+      "name": "app"
+    },
+    {
+      "essential": true,
+      "image": "525060288769.dkr.ecr.eu-west-1.amazonaws.com/ecomailcz/web:latest",
+      "links": [
+        "app"
+      ],
+      "memory": 512,
+      "mountPoints": [
+        {
+          "containerPath": "/var/www",
+          "sourceVolume": "application"
+        },
+        {
+          "containerPath": "/var/log/nginx",
+          "sourceVolume": "awseb-logs-nginx"
+        }
+      ],
+      "name": "web",
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80
+        }
+      ]
+    }
+  ],
+  "volumes": [
+    {
+      "host": {
+        "sourcePath": "/var/app/current"
+      },
+      "name": "application"
+    }
+  ]
+}
