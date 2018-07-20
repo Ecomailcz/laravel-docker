@@ -5,6 +5,7 @@ services:
     build:
       context: ./
       dockerfile: web.docker
+    image: ecomailcz/web
     volumes:
       - ../:/var/www
     ports:
@@ -15,6 +16,7 @@ services:
     build:
       context: ./
       dockerfile: app.docker
+    image: ecomailcz/app
     volumes:
       - ../:/var/www
     environment:
