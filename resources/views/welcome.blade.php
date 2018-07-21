@@ -82,10 +82,10 @@
                     Laravel
                 </div>
                 <p>
-                  <?php print_r(posix_getpwuid(fileowner('/var/www')))?>
+                  <?php print_r(posix_getpwuid(fileowner('/home')))?>
                 </p>
                 <p>
-                  <?php print_r(posix_getpwuid(fileowner('/var/www/storage/')))?>
+                  <?php print_r(posix_getpwuid(fileowner('/home/storage/')))?>
                 </p>
 
                 <div class="links">
