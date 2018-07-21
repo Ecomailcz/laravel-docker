@@ -6,5 +6,3 @@ RUN apt-get update && apt-get install -y \
     libmcrypt-dev \
     mysql-client --no-install-recommends \
     && docker-php-ext-install pdo_mysql pcntl
-
-RUN usermod -aG root www-data
