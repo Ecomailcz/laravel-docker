@@ -81,6 +81,12 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
+                <p>
+                  <?php print_r(posix_getpwuid(fileowner('/var/www')))?>
+                </p>
+                <p>
+                  <?php print_r(posix_getpwuid(fileowner('/var/www/storage/')))?>
+                </p>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
