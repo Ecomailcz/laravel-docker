@@ -7,7 +7,7 @@
       "memory": 128,
       "mountPoints": [
         {
-          "containerPath": "/var/www",
+          "containerPath": "/home",
           "sourceVolume": "application"
         },
         {
@@ -26,7 +26,7 @@
       "memory": 128,
       "mountPoints": [
         {
-          "containerPath": "/var/www",
+          "containerPath": "/home",
           "sourceVolume": "application"
         },
         {
