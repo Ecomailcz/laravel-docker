@@ -7,10 +7,6 @@
       "memory": 128,
       "mountPoints": [
         {
-          "containerPath": "/var/www",
-          "sourceVolume": "application"
-        },
-        {
           "containerPath": "/usr/local/var/log",
           "sourceVolume": "awseb-logs-app"
         }
@@ -26,10 +22,6 @@
       "memory": 128,
       "mountPoints": [
         {
-          "containerPath": "/var/www",
-          "sourceVolume": "application"
-        },
-        {
           "containerPath": "/var/log/nginx",
           "sourceVolume": "awseb-logs-web"
         }
@@ -41,14 +33,6 @@
           "hostPort": 80
         }
       ]
-    }
-  ],
-  "volumes": [
-    {
-      "host": {
-        "sourcePath": "/var/app/current"
-      },
-      "name": "application"
     }
   ]
 }
