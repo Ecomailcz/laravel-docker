@@ -7,7 +7,7 @@ services:
       dockerfile: web.docker
     image: ecomailcz/web
     volumes:
-      - ../:/home
+      - ../:/var/www
     ports:
       - "8080:80"
     links:
@@ -18,7 +18,7 @@ services:
       dockerfile: app.docker
     image: ecomailcz/app
     volumes:
-      - ../:/home
+      - ../:/var/www
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=db"
