@@ -5,7 +5,9 @@ services:
     build:
       context: ./
       dockerfile: .docker/web.docker
-    image: aaa/web
+    image: ecomailcz/web
+    volumes:
+      - ./:/var/www
     ports:
       - "8080:80"
     links:
@@ -13,8 +15,10 @@ services:
   app:
     build:
       context: ./
-      dockerfile: .docker/app-prod.docker
-    image: aaa/app
+      dockerfile: .docker/app-dev.docker
+    image: ecomailcz/app
+    volumes:
+      - ./:/var/www
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=db"
