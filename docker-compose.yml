@@ -19,6 +19,24 @@ services:
     image: ecomailcz/app
     volumes:
       - ./:/var/www
+    links:
+      - redis
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=db"
+  worker:
+    build:
+      context: ./
+      dockerfile: .docker/worker.docker
+    image: ecomailcz/worker
+    volumes:
+      - ./:/var/www
+    links:
+      - redis
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=db"
+  redis:
+    image: redis:3.0
+    ports:
+      - "6379:6379"
